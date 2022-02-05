@@ -6,7 +6,6 @@ function addNewImage(image, position) {
     obj.style.bottom = position[1];
     document.body.append(obj);
 
-    //return the object after appending. We can edit it if we need to
     return obj;
 }
 
@@ -19,15 +18,13 @@ function addNewItem(image, position) {
 }
 
 
-const TEXTURE_SIZE = 100; //in px
-const ROWS_SKY = 4; // will be 1 less than this
+const TEXTURE_SIZE = 100; 
+const ROWS_SKY = 4; 
 
-// 3 stacked tiles
 for (let y = 0; y < ROWS_SKY; y++)
     for (let x = 0; x < window.innerWidth / TEXTURE_SIZE; x++)
         addNewImage('assets/sky.png', [`${x * TEXTURE_SIZE}px`, `${window.innerHeight - TEXTURE_SIZE * y}px`]);
 
-// level 4 and down are grass.
 for (let y = ROWS_SKY; y < (window.innerHeight + TEXTURE_SIZE) / TEXTURE_SIZE; y++)
     for (let x = 0; x < window.innerWidth / TEXTURE_SIZE; x++)
         addNewImage('assets/grass.png', [`${x * TEXTURE_SIZE}px`, `${window.innerHeight - TEXTURE_SIZE * y}px`]);
